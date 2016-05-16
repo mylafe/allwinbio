@@ -1,0 +1,7 @@
+[ 2016-05-16T14:27:53+08:00 ] 127.0.0.1 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004476s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.011260s ]
+NOTIC: [8] Undefined index: url D:\Program Files (x86)\Ampps\www\allwinbio123.com\application\Common\Controller\AppframeController.class.php 第 24 行.
+
