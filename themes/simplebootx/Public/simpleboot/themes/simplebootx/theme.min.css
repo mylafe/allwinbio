@@ -754,7 +754,7 @@ ul ul,ul ol,ol ol,ol ul {
 }
 
 li {
-	line-height: 20px
+	line-height: 75px;
 }
 
 ul.unstyled,ol.unstyled {
@@ -3011,8 +3011,8 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
 .btn-info {
 	color: #fff;
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
-	background-color: #5fc2df;
-	*background-color: #46b8da;
+	background-color: #F39800;
+	*background-color: #F39800;
 	background-image: -moz-linear-gradient(top,#70c8e2,#46b8da);
 	background-image: -webkit-gradient(linear,0 0,0 100%,from(#70c8e2),to(#46b8da));
 	background-image: -webkit-linear-gradient(top,#70c8e2,#46b8da);
@@ -3027,8 +3027,8 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
 
 .btn-info:hover,.btn-info:focus,.btn-info:active,.btn-info.active,.btn-info.disabled,.btn-info[disabled] {
 	color: #fff;
-	background-color: #46b8da;
-	*background-color: #31b0d5
+	background-color: #F39800;
+	*background-color: #F39800;
 }
 
 .btn-info:active,.btn-info.active {
@@ -4019,7 +4019,7 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini {
 .navbar .nav>li>a {
 	float: none;
 	padding: 25px 15px 25px;
-	color: #428bca;
+	color: #000;
 	text-decoration: none;
 	text-shadow: 0 1px 0 #fff
 }
@@ -5472,7 +5472,7 @@ a.label:hover,a.label:focus,a.badge:hover,a.badge:focus {
 }
 
 body {
-	font-weight: 300
+	font-weight: 500;
 }
 
 h1 {
@@ -5547,13 +5547,16 @@ a.text-success:hover {
 	-moz-box-shadow: 0 1px 1px 0 rgba(50,50,50,0.08);
 	box-shadow: 0 1px 1px 0 rgba(50,50,50,0.08)
 }
-
+.sy-box{
+	margin-top: 55px;
+}
 .navbar .navbar-inner {
 	background-image: none;
 	border: 0;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
-	box-shadow: none
+	box-shadow: none;
+	background: rgba(255,255,255,.8);
 }
 
 .navbar .brand {
@@ -5565,7 +5568,7 @@ a.text-success:hover {
 }
 
 .navbar .brand:hover {
-	color: #428bca
+	color: #F39800;
 }
 
 .navbar .nav>.active>a,.navbar .nav>.active>a:hover,.navbar .nav>.active>a:focus {
@@ -5584,7 +5587,7 @@ a.text-success:hover {
 }
 
 .navbar .nav>li>a {
-	font-size: 16px
+	font-size: 18px
 }
 
 .navbar .nav>li>.dropdown-menu:before {

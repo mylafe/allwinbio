@@ -5,8 +5,8 @@
 		<meta name="keywords" content="<?php echo ($site_seo_keywords); ?>" />
 		<meta name="description" content="<?php echo ($site_seo_description); ?>">
 			<?php  function _sp_helloworld(){ echo "hello ThinkCMF!"; } function _sp_helloworld2(){ echo "hello ThinkCMF2!"; } function _sp_helloworld3(){ echo "hello ThinkCMF3!"; } ?>
-	<?php $portal_index_lastnews="2"; $portal_hot_articles="1,2"; $portal_last_post="1,2"; $tmpl=sp_get_theme_path(); $default_home_slides=array( array( "slide_name"=>"ThinkCMFX2.1.0发布啦！", "slide_pic"=>$tmpl."Public/images/demo/1.jpg", "slide_url"=>"", ), array( "slide_name"=>"ThinkCMFX2.1.0发布啦！", "slide_pic"=>$tmpl."Public/images/demo/2.jpg", "slide_url"=>"", ), array( "slide_name"=>"ThinkCMFX2.1.0发布啦！", "slide_pic"=>$tmpl."Public/images/demo/3.jpg", "slide_url"=>"", ), ); ?>
-	<meta name="author" content="ThinkCMF">
+	<?php $portal_index_lastnews="2"; $portal_hot_articles="1,2"; $portal_last_post="1,2"; $tmpl=sp_get_theme_path(); $default_home_slides=array( array( "slide_name"=>"南京奥维英生物制品有限公司", "slide_pic"=>$tmpl."Public/images/demo/1.jpg", "slide_url"=>"", ), array( "slide_name"=>"奥特壮奥特壮奥特壮奥特壮", "slide_pic"=>$tmpl."Public/images/demo/2.jpg", "slide_url"=>"", ), array( "slide_name"=>"公司简介公司简介公司简介", "slide_pic"=>$tmpl."Public/images/demo/3.jpg", "slide_url"=>"", ), ); ?>
+	<meta name="author" content="wave">
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -81,7 +81,7 @@
        	<?php
  $effected_id="main-menu"; $filetpl="<a href='\$href' target='\$target'>\$label</a>"; $foldertpl="<a href='\$href' target='\$target' class='dropdown-toggle' data-toggle='dropdown'>\$label <b class='caret'></b></a>"; $ul_class="dropdown-menu" ; $li_class="" ; $style="nav"; $showlevel=6; $dropdown='dropdown'; echo sp_get_menu("main",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown); ?>
 		
-		<ul class="nav pull-right" id="main-menu-user">
+		<!-- <ul class="nav pull-right" id="main-menu-user">
 			<li class="dropdown user login">
 	            <a class="dropdown-toggle user" data-toggle="dropdown" href="#">
 	            <img src="/themes/simplebootx//Public/images/headicon.png" class="headicon"/>
@@ -104,11 +104,11 @@
 	               <li><a href="<?php echo leuu('user/register/index');?>"><i class="fa fa-user"></i> &nbsp;注册</a></li>
 	            </ul>
           	</li>
-		</ul>
+		</ul> -->
 		<div class="pull-right">
-        	<form method="post" class="form-inline" action="<?php echo U('portal/search/index');?>" style="margin:18px 0;">
-				 <input type="text" class="" placeholder="Search" name="keyword" value="<?php echo I('get.keyword');?>"/>
-				 <input type="submit" class="btn btn-info" value="Go" style="margin:0"/>
+        	<form method="post" class="form-inline" action="<?php echo U('portal/search/index');?>" style="margin:40px;">
+				 <input type="text" class="" placeholder="请输入关键字" name="keyword" value="<?php echo I('get.keyword');?>"/>
+				 <input type="submit" class="btn btn-info" value="搜索" style="margin:0"/>
 			</form>
 		</div>
        </div>
@@ -127,7 +127,7 @@
 </ul>
 <div class="container">
 	
-	<div>
+	<!-- <div>
 		<h1 class="text-center">快速了解ThinkCMF</h1>
 		<h3 class="text-center">Quickly understand the ThinkCMF</h3>
 	</div>
@@ -159,12 +159,13 @@
 			  <h2 class="font-large nospace"><i class="fa fa-certificate"></i> 免费开源</h2>
               <p>代码遵循Apache2开源协议，免费使用，对商业用户也无任何限制。</p>
 		</div>
-	</div>
+	</div> -->
 	
 	<div>
 		<h1 class="text-center">最新资讯</h1>
 		<h3 class="text-center">Last News</h3>
-	</div>
+	</div> 
+	
 	<?php $lastnews=sp_sql_posts("cid:$portal_index_lastnews;field:post_title,post_excerpt,tid,smeta;order:listorder asc;limit:4;"); ?>
 	<div class="row">
 		<?php if(is_array($lastnews)): foreach($lastnews as $key=>$vo): $smeta=json_decode($vo['smeta'],true); ?>
@@ -187,6 +188,7 @@
 			</div>
 		</div><?php endforeach; endif; ?>
 	</div>
+
 <br>
 <br>
 <br>
@@ -194,20 +196,41 @@
 <hr>
 <?php echo hook('footer');?>
 <div id="footer">
+	<!-- 友情链接 -->
+	友情链接
 	<div class="links">
 		<?php $links=sp_getlinks(); ?>
 		<?php if(is_array($links)): foreach($links as $key=>$vo): ?><a href="<?php echo ($vo["link_url"]); ?>" target="<?php echo ($vo["link_target"]); ?>"><?php echo ($vo["link_name"]); ?></a><?php endforeach; endif; ?>
 	</div>
-	<p>
-		Made by <a href="http://www.thinkcmf.com" target="_blank">ThinkCMF</a>
-		Code licensed under the 
-		<a href="http://www.apache.org/licenses/LICENSE-2.0" rel="nofollow" target="_blank">Apache License v2.0</a>.
-		<br />
-		Based on 
-		<a href="http://getbootstrap.com/2.3.2/" target="_blank">Bootstrap</a>.
-		Icons from 
-		<a href="http://fortawesome.github.com/Font-Awesome/" target="_blank">Font Awesome</a>
-	</p>
+	
+	<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						<div class="footer_ewm col-lg-3 col-md-3 col-sm-3 hidden-xs">
+							<img src="upload/code.png"/>
+						</div>
+						<ul class="footer_contact col-lg-9 col-md-9 col-sm-9 hidden-xs">
+							<li>电话：<i>400-000-0000</i></li>
+							<li>服务时间：周一到周五早8:00到晚5:00</li>
+							<li>邮箱：xxx@163.com</li>
+							<li>地址：公司地址</li>
+						</ul>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						<ul class="footer_nav hidden-xs">
+							<li><a href="#">新闻中心</a></li>
+							<li><a href="#">产品中心</a></li>
+							<li><a href="#">招聘中心</a></li>
+							<li><a href="#">关于我们</a></li>
+						</ul>
+						<p class="copyr">
+							<a href="http://www.miitbeian.gov.cn">
+								Copyright 2012-2016 Allwin All Rights Reserved
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
 </div>
 <div id="backtotop">
 	<i class="fa fa-arrow-circle-up"></i>

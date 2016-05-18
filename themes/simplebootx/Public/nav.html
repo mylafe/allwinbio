@@ -21,7 +21,7 @@
 		  	echo sp_get_menu("main",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown);
 		?>
 		
-		<ul class="nav pull-right" id="main-menu-user">
+		<!-- <ul class="nav pull-right" id="main-menu-user">
 			<li class="dropdown user login">
 	            <a class="dropdown-toggle user" data-toggle="dropdown" href="#">
 	            <img src="__TMPL__/Public/images/headicon.png" class="headicon"/>
@@ -44,11 +44,11 @@
 	               <li><a href="{:leuu('user/register/index')}"><i class="fa fa-user"></i> &nbsp;注册</a></li>
 	            </ul>
           	</li>
-		</ul>
+		</ul> -->
 		<div class="pull-right">
-        	<form method="post" class="form-inline" action="{:U('portal/search/index')}" style="margin:18px 0;">
-				 <input type="text" class="" placeholder="Search" name="keyword" value="{:I('get.keyword')}"/>
-				 <input type="submit" class="btn btn-info" value="Go" style="margin:0"/>
+        	<form method="post" class="form-inline" action="{:U('portal/search/index')}" style="margin:40px;">
+				 <input type="text" class="" placeholder="请输入关键字" name="keyword" value="{:I('get.keyword')}"/>
+				 <input type="submit" class="btn btn-info" value="搜索" style="margin:0"/>
 			</form>
 		</div>
        </div>
