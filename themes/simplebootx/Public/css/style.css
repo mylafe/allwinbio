@@ -20,9 +20,8 @@ margin-left: 0px;
 	vertical-align: middle;
 	margin: 0 5px;
 }
-/*tc widget*/
-.tc-main{
-	margin-top: 55px;
+.tc-main {
+    margin-top: 20px;
 }
 /*tc-box*/
 .tc-box{
@@ -100,11 +99,11 @@ transition: all 0.8s ease-in-out;
 }
 .tc-gridbox .header img:hover {
 
-	-webkit-transform: scale(1.2) rotate(2deg);
--moz-transform: scale(1.2) rotate(2deg);
--o-transform: scale(1.2) rotate(2deg);
--ms-transform: scale(1.2) rotate(2deg);
-transform: scale(1.2) rotate(2deg);
+	-webkit-transform: scale(1.2) rotate(0deg);
+-moz-transform: scale(1.2) rotate(0deg);
+-o-transform: scale(1.2) rotate(0deg);
+-ms-transform: scale(1.2) rotate(0deg);
+transform: scale(1.2) rotate(0deg);
 }
 .tc-gridbox .header h3 {
   color: #454a4e;

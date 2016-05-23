@@ -246,7 +246,8 @@ a:hover,a:focus {
 }[class*="span"] {
 	float: left;
 	min-height: 1px;
-	margin-left: 20px
+	margin-left: 20px;
+	margin-bottom: 20px;
 }
 
 .container,.navbar-static-top .container,.navbar-fixed-top .container,.navbar-fixed-bottom .container {
@@ -676,7 +677,18 @@ a.text-success:hover,a.text-success:focus {
 }
 
 .text-center {
-	text-align: center
+	text-align: center;
+	font-size: 24px;
+	margin-top: 30px;
+    color: #444444;
+    padding-bottom: 40px;
+    background: url(/themes/simplebootx/Public/images/pattern.png) no-repeat center bottom;
+}
+.text-classification{
+	text-align: center;
+	font-size: 18px;
+	margin-top: 30px;
+    color: #444444;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -754,7 +766,7 @@ ul ul,ul ol,ol ol,ol ul {
 }
 
 li {
-	line-height: 75px;
+	line-height: 20px;
 }
 
 ul.unstyled,ol.unstyled {
@@ -4003,7 +4015,7 @@ button.btn.btn-mini,input[type="submit"].btn.btn-mini {
 	position: relative;
 	left: 0;
 	display: block;
-	float: left;
+	float: right;
 	margin: 0 10px 0 0
 }
 
@@ -5547,16 +5559,13 @@ a.text-success:hover {
 	-moz-box-shadow: 0 1px 1px 0 rgba(50,50,50,0.08);
 	box-shadow: 0 1px 1px 0 rgba(50,50,50,0.08)
 }
-.sy-box{
-	margin-top: 55px;
-}
 .navbar .navbar-inner {
 	background-image: none;
 	border: 0;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
-	background: rgba(255,255,255,.8);
+	background: rgba(255,255,255,1);
 }
 
 .navbar .brand {
@@ -6303,3 +6312,20 @@ input,button,select,textarea {
 	-moz-border-radius-topright: 0;
 	-moz-border-radius-bottomright: 0
 }
+.footer{
+	background-color: #F39800;
+    padding: 15px 0;
+    color: #fff;
+}
+.footer ul li{
+	list-style:none;
+}
+.footer a{
+	color: #fff;
+}
+.footer a:hover{
+	color: #000;
+	text-decoration:none;
+}
+@media (min-width:1200px){
+	.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9{float:left}.col-lg-12{width:100%}.col-lg-11{width:91.66666667%}.col-lg-10{width:83.33333333%}.col-lg-9{width:75%}.col-lg-8{width:66.66666667%}.col-lg-7{width:58.33333333%}.col-lg-6{width:50%}.col-lg-5{width:41.66666667%}.col-lg-4{width:33.33333333%}.col-lg-3{width:25%}.col-lg-2{width:16.66666667%}.col-lg-1{width:8.33333333%}

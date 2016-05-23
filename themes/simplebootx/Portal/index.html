@@ -89,12 +89,12 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 	</div> -->
 	
 	<div>
-		<h1 class="text-center">最新资讯</h1>
-		<h3 class="text-center">Last News</h3>
+		<h1 class="text-center">产品中心</h1>
+		<h4 class="text-classification">化药系列</h4>
 	</div> 
 	
 	<php>
-		$lastnews=sp_sql_posts("cid:$portal_index_lastnews;field:post_title,post_excerpt,tid,smeta;order:listorder asc;limit:4;"); 
+		$lastnews=sp_sql_posts("cid:$portal_index_lastnews;field:post_title,post_excerpt,tid,smeta;order:listorder asc;limit:8;"); 
 	</php>
 	<div class="row">
 		<foreach name="lastnews" item="vo">
@@ -121,8 +121,13 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 		</div>
 		</foreach>
 	</div>
-<tc_include file="Public:footer"/>
+
+	<div>
+		<h1 class="text-center">最新资讯</h1>
+	</div>
+
 </div>
+<tc_include file="Public:footer"/>
 
 <tc_include file="Public:scripts"/>
 <script src="__TMPL__Public/js/slippry.min.js"></script>
