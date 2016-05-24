@@ -133,8 +133,8 @@ line-height: 24px;
   margin-bottom: 14px;
   color: #343a3f;
 }
-.tc-gridbox .body a{color: #666;}
-.tc-gridbox .body a:hover{color: #428bca;}
+.tc-gridbox .body a{color: #000;}
+.tc-gridbox .body a:hover{color: #F39800;}
 .tc-gridbox .btn {
   float: right;
   margin-right: 10px;

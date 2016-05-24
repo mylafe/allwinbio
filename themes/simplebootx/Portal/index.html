@@ -53,43 +53,43 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 	</foreach>
 </ul>
 <div class="container">
-	
-	<!-- <div>
-		<h1 class="text-center">快速了解ThinkCMF</h1>
-		<h3 class="text-center">Quickly understand the ThinkCMF</h3>
-	</div>
-	<div class="row">
-		<div class="span4">
-			 <h2 class="font-large nospace"><i class="fa fa-bars"></i> MVC分层模式</h2>
-             <p>使用MVC应用程序被分成三个核心部件：模型（M）、视图（V）、控制器（C），他不是一个新的概念，只是ThinkCMF将其发挥到了极致。</p>
-		</div>
-		<div class="span4">
-			 <h2 class="font-large nospace"><i class="fa fa-group"></i> 用户管理</h2>
-             <p>ThinkCMF内置了灵活的用户管理方式，并可直接与第三方站点进行互联互通，如果你愿意甚至可以对单个用户或群体用户的行为进行记录及分享，为您的运营决策提供有效参考数据。</p>
-		</div>
-		<div class="span4">
-			  <h2 class="font-large nospace"><i class="fa fa-cloud"></i> 云端部署</h2>
-              <p>通过驱动的方式可以轻松支持云平台的部署，让你的网站无缝迁移，内置已经支持SAE、BAE，正式版将对云端部署进行进一步优化。</p>
-		</div>
-	</div>
-	
-	<div class="row">
-		<div class="span4">
-			 <h2 class="font-large nospace"><i class="fa fa-heart"></i> 安全策略</h2>
-             <p>提供的稳健的安全策略，包括备份恢复，容错，防治恶意攻击登陆，网页防篡改等多项安全管理功能，保证系统安全，可靠，稳定的运行。</p>
-		</div>
-		<div class="span4">
-			 <h2 class="font-large nospace"><i class="fa fa-cubes"></i> 应用模块化</h2>
-             <p>提出全新的应用模式进行扩展，不管是你开发一个小功能还是一个全新的站点，在ThinkCMF中你只是增加了一个APP，每个独立运行互不影响，便于灵活扩展和二次开发。</p>
-		</div>
-		<div class="span4">
-			  <h2 class="font-large nospace"><i class="fa fa-certificate"></i> 免费开源</h2>
-              <p>代码遵循Apache2开源协议，免费使用，对商业用户也无任何限制。</p>
-		</div>
-	</div> -->
-	
+
+	<!-- 产品中心 -->
 	<div>
 		<h1 class="text-center">产品中心</h1>
+		<h4 class="text-classification">饲料添加剂</h4>
+	</div> 
+	
+	<php>
+		$lastnews=sp_sql_posts("cid:$portal_index_lastnews;field:post_title,post_excerpt,tid,smeta;order:listorder asc;limit:4;"); 
+	</php>
+	<div class="row">
+		<foreach name="lastnews" item="vo">
+		<php>$smeta=json_decode($vo['smeta'],true);</php>
+		<div class="span3">
+			<div class="tc-gridbox">
+				<div class="header">
+					<div class="item-image">
+						<a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">
+							<if condition="empty($smeta['thumb'])"> 
+								<img src="__TMPL__Public/images/default_tupian1.png" class="img-responsive" alt="{$vo.post_title}"/>
+							<else /> 
+								<img src="{:sp_get_asset_upload_path($smeta['thumb'])}" class="img-responsive img-thumbnail" alt="{$vo.post_title}" />
+							</if>
+						</a>
+					</div>
+					<h3><a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">{$vo.post_title}</a></h3>
+					<hr>
+				</div>
+				<div class="body">
+					<p><a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">{:msubstr($vo['post_excerpt'],0,32)}</a></p>
+				</div>
+			</div>
+		</div>
+		</foreach>
+	</div>
+
+	<div>
 		<h4 class="text-classification">化药系列</h4>
 	</div> 
 	
@@ -122,8 +122,90 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 		</foreach>
 	</div>
 
+	<!-- 最新资讯 -->
 	<div>
 		<h1 class="text-center">最新资讯</h1>
+	</div>
+	<div class="row">
+		<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+			<div id="news_slide" class="news_slide_box">
+				<div class="bd">
+					<ul>
+						<li>
+							<a class="pic" href="#">
+								<img src="/themes/simplebootx/Public/images/code.png" />
+								<span class="title">
+									新闻标题
+								</span>
+							</a>
+						</li>
+						<li>
+							<a class="pic" href="#">
+								<img src="/themes/simplebootx/Public/images/code.png" />
+								<span class="title">
+									新闻标题新闻标题新闻标题新闻标题新闻标题
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<span class="prev"></span>
+				<span class="next"></span>
+			</div>
+		</div>
+		<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+			<ul class="news_list">
+				<li>
+					<div class="news_pic col-lg-3 col-md-3 col-sm-4 col-xs-12">									
+						<a href="#" class="">
+							<img src="/themes/simplebootx/Public/images/logo1.png"/>
+						</a>
+					</div>
+					<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+						<a href="#" class="news_tit">123</a>
+						<p class="news_time">2016-05-24</p>
+						<p class="news_desc">南京奥维英生物制品有限公司成立于2012年，是一家致力于研制中大猪营养动力因子为目标，计划面向全球生物科技，引进极少数领先于中国学术研究的高端畜牧生产技术，转化为中国式产品的 “孵化型企业”。科技是第一生产力。南京奥维英生物制品有限公司引进台湾国欢企业有限公司的智库，由魏荣展先生指导，运用IT产业的企业营运智能，同时启动产品、品牌、通路三点制一线充分合作的极限竞争建设。</p>
+					</div>
+				</li>
+				<li>
+					<div class="news_pic col-lg-3 col-md-3 col-sm-4 col-xs-12">									
+						<a href="#" class="">
+							<img src="/themes/simplebootx/Public/images/logo1.png"/>
+						</a>
+					</div>
+					<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+						<a href="#" class="news_tit">123</a>
+						<p class="news_time">2016-05-24</p>
+						<p class="news_desc">南京奥维英生物制品有限公司成立于2012年，是一家致力于研制中大猪营养动力因子为目标，计划面向全球生物科技，引进极少数领先于中国学术研究的高端畜牧生产技术，转化为中国式产品的 “孵化型企业”。科技是第一生产力。南京奥维英生物制品有限公司引进台湾国欢企业有限公司的智库，由魏荣展先生指导，运用IT产业的企业营运智能，同时启动产品、品牌、通路三点制一线充分合作的极限竞争建设。</p>
+					</div>
+				</li>
+				<li>
+					<div class="news_pic col-lg-3 col-md-3 col-sm-4 col-xs-12">									
+						<a href="#" class="">
+							<img src="/themes/simplebootx/Public/images/logo1.png"/>
+						</a>
+					</div>
+					<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+						<a href="#" class="news_tit">123</a>
+						<p class="news_time">2016-05-24</p>
+						<p class="news_desc">南京奥维英生物制品有限公司成立于2012年，是一家致力于研制中大猪营养动力因子为目标，计划面向全球生物科技，引进极少数领先于中国学术研究的高端畜牧生产技术，转化为中国式产品的 “孵化型企业”。科技是第一生产力。南京奥维英生物制品有限公司引进台湾国欢企业有限公司的智库，由魏荣展先生指导，运用IT产业的企业营运智能，同时启动产品、品牌、通路三点制一线充分合作的极限竞争建设。</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- 公司简介 -->
+	<div>
+		<h1 class="text-center">公司简介</h1>
+		<h3 class="text-classification">about us</h3>
+	</div>
+	<div class="row">
+		<div class="span4">
+			 <h2 class="font-large nospace"><i class="fa fa-bars"></i> 奥维英</h2>
+             <p>南京奥维英生物制品有限公司成立于2012年，是一家致力于研制中大猪营养动力因子为目标，计划面向全球生物科技，引进极少数领先于中国学术研究的高端畜牧生产技术，转化为中国式产品的 “孵化型企业”。
+     科技是第一生产力。南京奥维英生物制品有限公司引进台湾国欢企业有限公司的智库，由魏荣展先生指导，运用IT产业的企业营运智能，同时启动产品、品牌、通路三点制一线充分合作的极限竞争建设。</p>
+		</div>
 	</div>
 
 </div>
