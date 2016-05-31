@@ -1,0 +1,50 @@
+<br>
+<br>
+<br>
+<!-- Footer ================================================== -->
+{:hook('footer')}
+<div class="footer">
+	<div class="container">
+		<!-- 友情链接 -->
+		友情链接
+		<div class="links">
+			<php>$links=sp_getlinks();</php>
+			<foreach name="links" item="vo">
+				<a href="{$vo.link_url}" target="{$vo.link_target}">{$vo.link_name}</a>
+			</foreach>
+		</div>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="footer_ewm col-lg-3 col-md-3 col-sm-3 hidden-xs">
+						<img src="/themes/allwin_zh_cn/Public/images/code.png"/>
+					</div>
+					<ul class="footer_contact col-lg-9 col-md-9 col-sm-9 hidden-xs">
+						<li>电话：<i>{$site_tel}</i></li>
+						<li>传真：<i>{$site_fax}</i></li>
+						<li>邮箱：{$site_admin_email}</li>
+						<li>服务时间：<i>{$site_servicetime}</i></li>
+						<li>地址：{$site_address}</li>
+					</ul>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<ul class="footer_nav hidden-xs">
+						<li><a href="#">产品中心</a></li>
+						<li><a href="#">新闻资讯</a></li>
+						<li><a href="#">关于我们</a></li>
+					</ul>
+					<p class="copyr">
+						<a href="http://www.miitbeian.gov.cn">
+							{$site_copyright}
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div id="backtotop">
+			<i class="fa fa-arrow-circle-up"></i>
+		</div>
+		{$site_tongji}
+	</div>
+</div>

@@ -1,7 +1,7 @@
 <?php	return array (
   'SP_SITE_ADMIN_URL_PASSWORD' => '',
-  'SP_DEFAULT_THEME' => 'simplebootx',
-  'DEFAULT_THEME' => 'simplebootx',
+  'SP_DEFAULT_THEME' => 'allwin_zh_cn',
+  'DEFAULT_THEME' => 'allwin_zh_cn',
   'SP_ADMIN_STYLE' => 'bluesky',
   'URL_MODEL' => '0',
   'URL_HTML_SUFFIX' => '',

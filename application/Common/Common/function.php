@@ -1776,3 +1776,26 @@ function sp_delete_physics_img($imglist){
     
     return $res;
 }
+/**
+ * 面包屑导航
+ * @param  [type] $cid   [description]
+ * @param  string $title [description]
+ * @return [type]        [description]
+ */
+function sp_get_path($cid, $title=""){
+	$term = sp_get_term($cid);		
+	$html="<ul class=\"breadcrumb\"> <li><a href=\"/\">首页</a> <span class=\"divider\">></span></li>";
+	$parent = sp_get_term($term['parent']);
+	if($parent){
+		$url=UU('portal/list/index',array(id=>$term['parent']));
+		$html.="<li><a href=\"$url\">${parent['name']}</a> <span class=\"divider\">></span></li>";
+	}	
+	if(empty($title)){
+		$html.="<li class=\"active\">${term['name']}</li></ul>";
+	}else{
+		$url=UU('portal/list/index',array(id=>$cid));
+		$html.="<li><a href=\"$url\">${term['name']}</a><span class=\"divider\">></span></li>";
+		$html.="<li class=\"active\">$title</li></ul>";
+	}
+	echo $html;
+}
