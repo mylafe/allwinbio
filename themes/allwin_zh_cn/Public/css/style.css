@@ -84,7 +84,7 @@ box-shadow: 0 5px 5px 0 rgba(50,50,50,0.1);
   padding-right: 0px;
   padding-left: 0px;
   text-align: center;
-	background: #fff;
+  background: #fff;
 }
 .tc-gridbox .footer {
   padding: 5px 14px 5px 14px;
@@ -95,7 +95,7 @@ box-shadow: 0 5px 5px 0 rgba(50,50,50,0.1);
 	overflow: hidden;
 }
 .tc-gridbox .header img {
-  margin-bottom: 5px;
+  /*margin-bottom: 5px;*/
 	-webkit-transition: all 0.8s ease-in-out;
 -moz-transition: all 0.8s ease-in-out;
 -o-transition: all 0.8s ease-in-out;
@@ -541,4 +541,16 @@ ul.tc-photos{margin: 0;}
 }
 .footer_ewm img{
 	padding-left: 30px;
+}
+.sr-bdimgshare-list{
+	height: 160px !important;
+}
+.altrahog{
+	color: #000;
+	line-height: 50px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.copyr{
+	margin-top: 37px;
 }

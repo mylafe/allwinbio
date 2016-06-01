@@ -32,6 +32,9 @@
 				-o-border-radius: 0;
 				border-radius: 0;}
 			}
+			.tc-gridbox {
+				border: solid 0px #ddd;
+			}
 		</style>
 	</head>
 <body class="body-white">
@@ -61,43 +64,43 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 	</div> 
 	
 	<php>
-		$lastnews=sp_sql_posts("cid:6;field:post_title,post_excerpt,tid,smeta;order:listorder asc;limit:1;"); 
+		$lastnews=sp_sql_posts("cid:9;field:post_title,post_excerpt,post_content,tid,smeta;order:listorder asc;limit:1;"); 
 	</php>
-	<div class="row">
+	<div class="row" style="background-color:#FFBD0C;border-radius:25px;">
 		<foreach name="lastnews" item="vo">
 		<php>$smeta=json_decode($vo['smeta'],true);</php>
-		<div class="span6">
+		<div class="span3">
 			<div class="tc-gridbox">
 				<div class="header">
-					<div class="item-image">
+					<div class="item-image" style="background:#FFBD0C;">
 						<a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">
-							<if condition="empty($smeta['thumb'])"> 
-								<img src="__TMPL__Public/images/default_tupian1.png" class="img-responsive" alt="{$vo.post_title}"/>
-							<else /> 
-								<img src="{:sp_get_asset_upload_path($smeta['thumb'])}" class="img-responsive img-thumbnail" alt="{$vo.post_title}" />
-							</if>
+						<img src="/themes/allwin_zh_cn/Public/images/ultrahog.jpg" class="img-responsive img-thumbnail" alt="{$vo.post_title}" style="margin-top: 18px;" />
 						</a>
 					</div>
-					<h3><a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">{$vo.post_title}</a></h3>
 				</div>
 			</div>
 		</div>
-		<div class="span6">
-			<!-- <p>{:msubstr($vo['post_excerpt'],0,900)}</p> -->
+		<div class="span3">
 			<div class="tc-gridbox">
 				<div class="header">
 					<div class="item-image">
 						<a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">
 							<if condition="empty($smeta['thumb'])"> 
-								<img src="__TMPL__Public/images/default_tupian1.png" class="img-responsive" alt="{$vo.post_title}"/>
+								<img style="margin-bottom: 0px !important;" src="__TMPL__Public/images/default_tupian1.png" class="img-responsive" alt="{$vo.post_title}"/>
 							<else /> 
 								<img src="{:sp_get_asset_upload_path($smeta['thumb'])}" class="img-responsive img-thumbnail" alt="{$vo.post_title}" />
 							</if>
 						</a>
 					</div>
-					<h3><a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">{$vo.post_title}</a></h3>
+					<!-- <h3><a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">{$vo.post_title}</a></h3> -->
 				</div>
 			</div>
+		</div>
+		<div class="span6 altrahog">
+			<!-- <p>{:msubstr($vo['post_content'],1120,850)}</p> -->
+			<p>1）奥特壮：猪用营养动力因子，是191个氨基酸的多肽。<br/>               
+			2）来源：工程菌发酵代谢产物（分子量：43,000道尔顿左右，肠道不吸收）。<br/>
+			3）作用：对商品猪激发IGF-I的分泌与促全身组织细胞增长（体积）作用；对怀孕母猪激发IGF-I、IGF-II的分泌与促胚胎组织细胞增生（数量）作用。</p>
 		</div>
 		</foreach>
 	</div>
@@ -134,46 +137,18 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 		</div>
 		</foreach>
 	</div> -->
-
 	<!-- 最新资讯 -->
-	<!-- <div>
-		<h1 class="text-center">最新资讯</h1>
-	</div>
-	<php>
-		$lists =sp_sql_posts("cid:$cat_id;order:post_date DESC;",3);
-
-	</php>
-	<div class="row">
-		<foreach>
-		<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-			<ul class="news_list">
-				<li>
-					<div class="news_pic col-lg-3 col-md-3 col-sm-4 col-xs-12">							
-						<a href="#" class="">
-							<img src="/themes/allwin_zh_cn/Public/images/logo1.png"/>
-						</a>
-					</div>
-					<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-						<a href="#" class="news_tit">{$vo.post_date}</a> 
-						<p class="news_time">{$vo.post_modified}</p>
-						<p class="news_desc">{$vo.post_content}</p>
-					</div>
-				</li>
-			</ul>
-		</div>
-		</foreach>
-	</div> -->
 		<div>
 			<h1 class="text-center">最新资讯</h1>
 		</div>
 		<div class="row">
 			<php>
-				$posts=sp_sql_posts('cid:1;field:post_title,post_excerpt,post_content,post_modified,tid;order:listorder asc;limit:3;');
+				$posts=sp_sql_posts('cid:6;field:post_title,post_excerpt,post_content,post_modified,tid;limit:3;order:post_modified desc;');
 			</php>
 			<foreach name="posts" item="vo">
 			<div class="span4">
 				<h2 class="font-large nospace"><i class="fa"></i><a href="{:leuu('article/index',array('id'=>$vo['tid']))}">{$vo.post_title}</a></h2>
-				<p>{:msubstr($vo['post_content'],0,300)}</p>
+				<p>{:msubstr($vo['post_excerpt'],0,100)}</p>
 				<p>{$vo.post_modified}</p>
 			</div>
 			</foreach>
@@ -190,8 +165,8 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 			</php>
 			<foreach name="posts" item="vo">
 			<div class="span12">
-				<h2 class="font-large nospace"><i class="fa"></i><a href="{:leuu('article/index',array('id'=>$vo['tid']))}">{$vo.post_title}</a></h2>
-				<p>{:msubstr($vo['post_content'],0,300)}</p>
+				<h2 class="font-large nospace"><i class="fa"></i><a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">{$vo.post_title}</a></h2>
+				<p>{:msubstr($vo['post_excerpt'],0,300)}</p>
 				<!-- <p>{$vo.post_modified}</p> -->
 			</div>
 			</foreach>

@@ -92,7 +92,7 @@ class String {
             preg_match_all($re[$charset], $str, $match);
             $slice = join("",array_slice($match[0], $start, $length));
         }
-        return $suffix ? $slice.'...' : $slice;
+        return $suffix ? $slice : $slice;
     }
 
     /**
