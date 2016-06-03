@@ -21,7 +21,7 @@
 		<div class="span9">
 			<div class="">
 				<php>
-					$lists = sp_sql_posts_paged("cid:$cat_id;order:post_date DESC;",10);
+					$lists = sp_sql_posts_paged("cid:$cat_id;order:post_date DESC;",8);
 				</php>
 				<volist name="lists['posts']" id="vo">
 				<php>
@@ -60,11 +60,11 @@
         	
         	<div class="tc-box">
 	        	<div class="headtitle">
-	        		<h2>热门文章</h2>
+	        		<h2>热门资讯</h2>
 	        	</div>
 	        	<div class="ranking">
 	        		<php>
-						$hot_articles=sp_sql_posts("cid:$portal_hot_articles;field:post_title,post_excerpt,tid,term_id,smeta;order:post_hits desc;limit:5;"); 
+						$hot_articles=sp_sql_posts("cid:6;field:post_title,post_excerpt,tid,term_id,smeta;order:post_hits desc;limit:5;"); 
 					</php>
 		        	<ul class="unstyled">
 		        		<foreach name="hot_articles" item="vo">
@@ -115,7 +115,7 @@
 	        		<h2>最新发布</h2>
 	        	</div>
 	        	<php>
-					$last_post=sp_sql_posts("cid:$portal_last_post;field:post_title,post_excerpt,tid,term_id,smeta;order:listorder asc;limit:4;"); 
+					$last_post=sp_sql_posts("cid:6;field:post_title,post_excerpt,tid,term_id,smeta;order:listorder asc;limit:4;"); 
 				</php>
 	        	<div class="posts">
 	        		<foreach name="last_post" item="vo">

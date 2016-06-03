@@ -74,6 +74,9 @@ h1 a {
 .login .input:focus {
 	outline:0 none;
 }
+.wrap a{
+	height: 95px !important;
+}
 .btn {
 	width: 248px;
 	height: 38px;

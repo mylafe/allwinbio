@@ -92,11 +92,11 @@
         	
         	<div class="tc-box">
 	        	<div class="headtitle">
-	        		<h2>热门文章</h2>
+	        		<h2>热门资讯</h2>
 	        	</div>
 	        	<div class="ranking">
 	        		<php>
-						$hot_articles=sp_sql_posts("cid:$portal_hot_articles;field:post_title,post_excerpt,tid,smeta,term_id;order:post_hits desc;limit:5;"); 
+						$hot_articles=sp_sql_posts("cid:6;field:post_title,post_excerpt,tid,smeta,term_id;order:post_hits desc;limit:5;"); 
 					</php>
 		        	<ul class="unstyled">
 		        		<foreach name="hot_articles" item="vo">
@@ -107,6 +107,31 @@
 				</div>
 			</div>
 			
+			<div class="tc-box">
+	        	<div class="headtitle">
+	        		<h2>最新发布</h2>
+	        	</div>
+	        	<php>
+					$last_post=sp_sql_posts("cid:6;field:post_title,post_excerpt,tid,term_id,smeta;order:listorder asc;limit:4;"); 
+				</php>
+	        	<div class="posts">
+	        		<foreach name="last_post" item="vo">
+	        		<php>$smeta=json_decode($vo['smeta'],true);</php>
+			        	<dl class="dl-horizontal">
+				            <dt>
+					            <a class="img-wraper" href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">
+					            	<if condition="empty($smeta['thumb'])"> 
+										<img src="__TMPL__Public/images/default_tupian4.png" class="img-responsive" alt="{$vo.post_title}"/>
+									<else /> 
+										<img src="{:sp_get_asset_upload_path($smeta['thumb'])}" class="img-responsive img-thumbnail" alt="{$vo.post_title}" />
+									</if>
+					            </a>
+				            </dt>
+				            <dd><a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">{:msubstr($vo['post_excerpt'],0,32)}</a></dd>
+				        </dl>
+			        </foreach>
+		        </div>
+			</div>
 			<!-- <div class="tc-box">
 	        	<div class="headtitle">
 	        		<h2>最新加入</h2>
