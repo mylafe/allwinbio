@@ -543,7 +543,7 @@ ul.tc-photos{margin: 0;}
 	padding-left: 30px;
 }
 .sr-bdimgshare-list{
-	height: 160px !important;
+	/*height: 160px !important;*/
 }
 .altrahog{
 	color: #000;
@@ -553,7 +553,4 @@ ul.tc-photos{margin: 0;}
 }
 .copyr{
 	margin-top: 37px;
-}
-#menu-item-2{
-	display: none;
 }

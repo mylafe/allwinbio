@@ -112,7 +112,7 @@
 	        		<h2>最新发布</h2>
 	        	</div>
 	        	<php>
-					$last_post=sp_sql_posts("cid:6;field:post_title,post_excerpt,tid,term_id,smeta;order:listorder asc;limit:4;"); 
+					$last_post=sp_sql_posts("cid:6;field:post_title,post_excerpt,tid,term_id,smeta;order:post_modified desc;limit:4;"); 
 				</php>
 	        	<div class="posts">
 	        		<foreach name="last_post" item="vo">

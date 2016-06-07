@@ -37,12 +37,12 @@ img {
 			</script>
 		</div>
 	</div>
-	<div class="container">
+	<!-- <div class="container">
 		<div class="page_pos col-lg-12 text-left">
 			<span class="pos">当前位置：</span>
 			{:sp_get_path($cat_id)}
 		</div>
-	</div>
+	</div> -->
 	<div class="container">
 		<div class="row">
 			<div class="span6 colormodule">
@@ -83,32 +83,18 @@ img {
 				</form>
 			</div>
 			<div class="span6">
-				<div class="row">
-					<div class="span3 colormodule">
-						<h3 class="section-title">联系方式</h3>
-						<div class="contact-info">
-							<h5>地址</h5>
-							<p>{$site_address}</p>
-
-							<h5>邮箱</h5>
-							<p>{$site_admin_email}</p>
-
-							<h5>电话</h5>
-							<p>{$site_tel}</p>
-						</div>
-					</div>
-					<div class="span3 colormodule">
+					<div class="span6 colormodule">
 						<h3 class="section-title">公司简介</h3>
 						<div class="contact-info">
-							南京奥维英生物制品有限公司成立于2012年，是一家致力于研制中大猪营养动力因子为目标，引进极少数领先于中国学术研究的高端畜牧生产技术，转化为中国式产品的 “孵化型企业”。科技是第一生产力。南京奥维英生物制品有限公司引进台湾国欢企业有限公司的智库，由魏荣展先生指导，运用IT产业的企业营运智能，同时启动产品、品牌、通路三点制一线充分合作的极限竞争建设。
+							&nbsp&nbsp&nbsp&nbsp南京奥维英生物制品有限公司成立于2012年，是一家致力于研制中大猪营养动力因子为目标，计划面向全球生物科技，引进极少数领先于中国学术研究的高端畜牧生产技术，转化为中国式产品的 “孵化型企业”。科技是第一生产力。南京奥维英生物制品有限公司引进台湾国欢企业有限公司的智库，由魏荣展先生指导，运用IT产业的企业营运智能，同时启动产品、品牌、通路三点制一线充分合作的极限竞争建设。南京奥维英生物制品有限公司：企业定位：动物营养分子农场。企业愿望：客户、员工、企业、社会四方共赢。企业使命：以生命科学技术，推动健康，高效养殖；以统一连锁经营，提供便捷服务。
 						</div>
 					</div>
 				</div>
-				<div class="colormodule">
+				<div class="span6 colormodule">
 					<h3 class="section-title">快捷交流</h3>
 					<p class="contact-info">点击以下QQ图标</p>
 					<div class="social-media contact-info">
-						<div class="qqservice">
+						<div class="qqservice" style="float:left">
 							<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$site_webqq1}&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:{$site_webqq1}:51" alt="点击这里给我发消息" title="点击这里给我发消息" /></a>
 						</div>
 						<div class="qqservice">

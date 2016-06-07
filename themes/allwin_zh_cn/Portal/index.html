@@ -57,7 +57,7 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 	<!-- 产品中心 -->
 	<div>
 		<h1 class="text-center">产品中心</h1>
-		<h4 class="text-classification">饲料添加剂</h4>
+		<h4 class="text-classification"><a href="/index.php?g=&m=article&a=index&id=27">饲料添加剂</a></h4>
 	</div> 
 	
 	<php>
@@ -136,7 +136,7 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 	</div> -->
 	<!-- 最新资讯 -->
 		<div>
-			<h1 class="text-center">最新资讯</h1>
+			<h1 class="text-center"><a href="/index.php?m=list&a=index&id=6">最新资讯<a></h1>
 		</div>
 		<!-- 格式一 -->
 		<!-- <div class="row">
@@ -152,7 +152,7 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 				</foreach>
 			</div> -->
 		<php>
-		$lastnews=sp_sql_posts("cid:6;order:post_modified desc;limit:8;");
+		$lastnews=sp_sql_posts("cid:6;order:post_modified desc;limit:4;");
 		</php>
 		<div class="row">
 			<foreach name="lastnews" item="vo">
@@ -181,19 +181,29 @@ $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
 			</foreach>
 		</div>
 
-	<!-- 公司简介 -->
+	<!-- 推广之星 -->
 		<div>
-			<h1 class="text-center">公司简介</h1>
+			<h1 class="text-center"><a href="/index.php?m=list&a=index&id=11">推广之星</a></h1>
 		</div>
 		<div class="row">
 			<php>
-				$posts=sp_sql_posts('cid:1;field:post_title,post_excerpt,post_content,post_modified,tid;order:listorder asc;limit:1;');
+				$posts=sp_sql_posts('cid:11;field:post_title,post_excerpt,post_content,smeta,post_modified,tid;order:post_modified desc;limit:4;');
 			</php>
 			<foreach name="posts" item="vo">
-			<div class="span12">
-				<h2 class="font-large nospace"><i class="fa"></i><a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">{$vo.post_title}</a></h2>
-				<p>{:msubstr($vo['post_excerpt'],0,300)}</p>
-				<!-- <p>{$vo.post_modified}</p> -->
+			<php>$smeta=json_decode($vo['smeta'],true);</php>
+			<div class="span3">
+				<h4 class="font-large nospace"><i class="fa"></i><a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">{$vo.post_title}</a></h4>
+				<div class="item-image">
+					<a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}">
+						<if condition="empty($smeta['thumb'])"> 
+							<img src="__TMPL__Public/images/default_tupian1.png" class="img-responsive" alt="{$vo.post_title}"/>
+						<else /> 
+							<img src="{:sp_get_asset_upload_path($smeta['thumb'])}" class="img-responsive img-thumbnail" alt="{$vo.post_title}" />
+						</if>
+					</a>
+				</div>
+				<p>{:msubstr($vo['post_excerpt'],0,50)}</p>
+				<p>{$vo.post_modified}</p>
 			</div>
 			</foreach>
 		</div>
